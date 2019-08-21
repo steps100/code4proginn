@@ -1,0 +1,34 @@
+server:
+    compression:
+        enabled: true
+        mime-types: application/json,application/xml,text/html,text/xml,text/plain,application/x-javascript,application/javascript,text/javascript,text/css,image/jpeg,image/gif,image/png
+    port: 28100
+spring:
+  autoconfigure:
+      exclude:
+        - org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+        - org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration
+  tomcat:
+    max-wait: 20000
+    max-active: 50
+    max-idle: 20
+    min-idle: 15
+          
+security:
+  jwt:
+    token:
+      secret-key: HmYIdm62NE0hqX0hxem3twIvP2l1V3BB
+      expire-length: 3600000
+
+ResourceController:
+  resources: 获取资源数据列表
+  resources-by-id: 根据资源id获取资源信息
+
+AccountController:
+  login: 登录或创建账户
+
+OrderController:
+  addOrder: 增加订单
+
+SettlementController:
+  settlements: 获取结算数据列表
